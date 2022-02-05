@@ -1,0 +1,22 @@
+.appWeb {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  & > .cont_appWeb {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    & > .cont2_appWeb {
+      min-height: 100vh;
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  }
+}

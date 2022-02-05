@@ -1,0 +1,52 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/app_web/dist
+/app_web/tmp
+/app_web/out-tsc
+# Only exists if Bazel was run
+/app_web/bazel-out
+
+# dependencies
+/app_web/node_modules
+
+# profiling files
+/app_web/chrome-profiler-events*.json
+
+# IDEs and editors
+/app_web/.idea
+/app_web/.project
+/app_web/.classpath
+/app_web/.c9/
+/app_web/*.launch
+/app_web/.settings/
+/app_web/*.sublime-workspace
+
+# IDE - VSCode
+/app_web/.vscode/*
+/app_web/!.vscode/settings.json
+/app_web/!.vscode/tasks.json
+/app_web/!.vscode/launch.json
+/app_web/!.vscode/extensions.json
+/app_web/.history/*
+
+# misc
+/app_web/.angular/cache
+/app_web/.sass-cache
+/app_web/connect.lock
+/app_web/coverage
+/app_web/libpeerconnection.log
+/app_web/npm-debug.log
+/app_web/yarn-error.log
+/app_web/testem.log
+/app_web/typings
+
+# System Files
+/app_web/.DS_Store
+/app_web/Thumbs.db
+
+
+# APP_SERVER
+/app_serve/geteway/node_modules
+/app_serve/services/auth/node_modules
+/app_serve/services/patients/node_modules
