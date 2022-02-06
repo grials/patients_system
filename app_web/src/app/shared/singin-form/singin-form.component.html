@@ -1,0 +1,154 @@
+<div class="SinginForm">
+  <div class="cont_sf">
+    <div class="cont2_sf">
+      <div class="continerForm">
+        <div class="cont_cf">
+          <div class="cont2_cf">
+            <form class="formSingin" [formGroup]="singinFormGroup">
+              <div class="title">
+                <h2>Registrarse</h2>
+              </div>
+              <div class="contentInputs">
+                <div class="cont_ci">
+                  <div class="cont2_ci">
+                    <div class="contentInput">
+                      <mat-form-field
+                        class="example-full-width name"
+                        appearance="fill"
+                      >
+                        <mat-label>Nombre</mat-label>
+                        <input
+                          matInput
+                          placeholder="Primer Nombre"
+                          formControlName="name"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <div class="contentInput">
+                      <mat-form-field class="lastname" appearance="fill">
+                        <mat-label>Apellido</mat-label>
+                        <input
+                          matInput
+                          placeholder="Primer Nombre"
+                          formControlName="lastname"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contentInputs">
+                <div class="cont_ci">
+                  <div class="cont2_ci">
+                    <div class="contentInput">
+                      <mat-form-field class="age" appearance="fill">
+                        <mat-label>Edad</mat-label>
+                        <input
+                          matInput
+                          placeholder="Edad"
+                          formControlName="age"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <div class="contentInput">
+                      <mat-form-field class="birthday" appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input
+                          matInput
+                          [matDatepicker]="picker"
+                          formControlName="birthday"
+                        />
+                        <mat-datepicker-toggle
+                          matSuffix
+                          [for]="picker"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contentInputs">
+                <div class="cont_ci">
+                  <div class="cont2_ci">
+                    <div class="contentInput">
+                      <div class="gender">
+                        <h3>Sexo:</h3>
+                        <mat-radio-group
+                          aria-label="Select an option"
+                          formControlName="gender"
+                        >
+                          <mat-radio-button value="famenine"
+                            >mujer</mat-radio-button
+                          >
+                          <mat-radio-button value="male"
+                            >Homber</mat-radio-button
+                          >
+                        </mat-radio-group>
+                      </div>
+                    </div>
+                    <div class="contentInput">
+                      <mat-slide-toggle
+                        formControlName="pregnancy"
+                        [disabled]="isMale()"
+                        >¿Embarazo o lactancia?</mat-slide-toggle
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contentInputs">
+                <div class="cont_ci">
+                  <div class="cont2_ci">
+                    <div class="phone">
+                      <mat-form-field
+                        class="example-full-width"
+                        appearance="fill"
+                      >
+                        <mat-label>Teléfono</mat-label>
+                        <input
+                          matInput
+                          placeholder="Teléfono"
+                          formControlName="phone"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contentBtn">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  (click)="onSubmit()"
+                  [disabled]="disabledSubmitButton"
+                >
+                  Registrarse
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+  Como usuario de la aplicación, quiero poder visitar la pagina de registro
+  y llenar un formulario de inscripción al sistema que recopile los siguientes
+  datos: nombre (input), apellido (input), edad (select), sexo (radio-button),
+  embarazo o lactancia? (si - no, switch o radio button) fecha de nacimiento (date-picker),
+  teléfono (input).
+
+Al hacer submit en el formulario, debe dirigirse a la página principal (dashboard)
+donde se muestre un mensaje de bienvenida, los datos del usuario.
+
+Consideraciones:
+
+Si el usuario selecciona sexo masculino, el campo embarazo o lactancia debe ser deshabilitado.
+
+De acuerdo a su experiencia, considere las validaciones necesarias para cada
+tipo de campo del formulario. Si la información no cumple con los requerimientos de validación,
+debe mostrar feedback al usuario de acuerdo a cada error de validación al ejecutar el submit.
+ -->
