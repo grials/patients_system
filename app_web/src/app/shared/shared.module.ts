@@ -7,6 +7,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { SinginFormComponent } from './singin-form/singin-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MaterialModule } from '../material/material.module';
     HeaderComponent,
     SkillsComponent,
     SinginFormComponent,
+    LoginFormComponent,
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, MaterialModule],
   exports: [
@@ -21,6 +23,7 @@ import { MaterialModule } from '../material/material.module';
     HeaderComponent,
     SkillsComponent,
     SinginFormComponent,
+    LoginFormComponent,
   ],
 })
 export class SharedModule {}

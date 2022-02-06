@@ -71,7 +71,10 @@ export class SinginFormComponent implements OnInit {
   onSubmit() {
     // alert('Message has been sent.');
     // this.singinFormGroup?.reset();
-    console.log(this.singinFormGroup.value);
+    console.log(
+      this.singinFormGroup.value,
+      this.singinFormGroup.get('birthday')?.value.toLocaleDateString()
+    );
     this.disabledSubmitButton = true;
   }
 }

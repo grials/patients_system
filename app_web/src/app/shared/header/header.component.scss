@@ -102,7 +102,39 @@
       }
 
       & > .continerMenu {
-        /*Menu Web*/
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        & > .cont_cm {
+          position: relative;
+          width: 100%;
+          height: auto;
+          padding: 5px 16px;
+
+          & > .cont2_cm {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & > a {
+              font-size: 1rem;
+              text-align: center;
+              text-decoration: none;
+              text-transform: uppercase;
+              &:any-link {
+                color: #636569;
+              }
+
+              &:hover {
+                color: rgb(0, 38, 255);
+              }
+            }
+          }
+        }
       }
     }
   }
