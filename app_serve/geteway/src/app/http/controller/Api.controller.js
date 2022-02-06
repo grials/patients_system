@@ -1,17 +1,42 @@
+const patientsService = require("../../../services/patients.service");
+
 class ApiController {
   constructor() {}
 
-  sayHello(req, res) {
-    return res.status(200).json({
-      message: 'wolcome to api',
-    });
+  async addPatient(req, res){
+    const response = await patientsService.addPatient(req.body);
+
+    if (response.status >= 200 && response.status < 300) {
+      return res.status(200).json({
+        ...response.data
+      })
+    }
+
+    return res.status(500);
   }
 
-  getJson(req, res) {
-    return res.status(200).json({
-      msg: 'Done!!!!!....',
-      data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-    });
+  async allPatients(req, res){
+    const response = await patientsService.getAllPatients();
+
+    if (response.status >= 200 && response.status < 300) {
+      return res.status(200).send({
+        ...response.data
+      })
+    }
+
+    return res.status(500);
+  }
+
+  async getPatient(req, res){
+    const response = await patientsService.getPatient(req.body);
+
+    if (response.status >= 200 && response.status < 300) {
+      return res.status(200).json({
+        ...response.data
+      })
+    }
+
+    return res.status(500);
   }
 }
 

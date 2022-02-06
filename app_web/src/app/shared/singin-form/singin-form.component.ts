@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-singin-form',
@@ -70,10 +71,10 @@ export class SinginFormComponent implements OnInit {
 
   onSubmit() {
     // alert('Message has been sent.');
-    // this.singinFormGroup?.reset();
+    // this.singinFormGroup?.reset();format('DD/MM/YYYY')
     console.log(
       this.singinFormGroup.value,
-      this.singinFormGroup.get('birthday')?.value.toLocaleDateString()
+      moment(this.singinFormGroup.get('birthday')?.value).format('DD/MM/YYYY')
     );
     this.disabledSubmitButton = true;
   }

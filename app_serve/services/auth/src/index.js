@@ -4,6 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const routes = require('./routes/routesServer.routes');
 const config = require('./config');
 const connection = require('./helpers/Connection.database');
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(helmet());
 app.use(compression());
+app.use(routes())
 
 try {
     connection();
