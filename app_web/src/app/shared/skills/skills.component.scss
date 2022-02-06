@@ -1,0 +1,145 @@
+.skill {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  & > .cont_skill {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > .cont2_skill {
+      max-width: 1200px;
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+
+      & > .title {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > h2 {
+          max-width: 550px;
+          color: #636569;
+          font-size: 1.8rem;
+          text-align: center;
+        }
+      }
+
+      & > .lines {
+      }
+
+      & > .continerImages {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        & > .cont_ci {
+          position: relative;
+          width: 100%;
+          height: auto;
+          // padding: 16px 0;
+
+          & > .cont2_ci {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            & > figure {
+              min-width: 250px;
+              flex-basis: 25%;
+              padding: 10px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              & > img {
+                width: 150px;
+                height: 150px;
+              }
+
+              & > figcaption {
+                text-align: center;
+                font-size: 1rem;
+                color: #636569;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .skill {
+    & > .cont_skill {
+      & > .cont2_skill {
+        & > .lines {
+          position: relative;
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: stretch;
+          padding: 0 150px;
+
+          & > .row {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+          }
+
+          & > .firts {
+            & > .box {
+              height: 100%;
+              flex-basis: 50%;
+              border-bottom: 3px solid #000;
+              border-bottom-style: dotted;
+
+              &:not(:last-child) {
+                border-right: 3px solid #000;
+                border-right-style: dotted;
+              }
+            }
+          }
+
+          & > .second {
+            & > .box {
+              height: 100%;
+              flex-basis: 33.333333%;
+              border-left: 3px solid #000;
+              border-left-style: dotted;
+
+              &:nth-of-type(3) {
+                border-right: 3px solid #000;
+                border-right-style: dotted;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
