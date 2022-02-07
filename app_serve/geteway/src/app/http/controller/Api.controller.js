@@ -1,5 +1,5 @@
 const patientsService = require("../../../services/patients.service");
-
+const authService = require("../../../services/auth.service");
 class ApiController {
   constructor() {}
 
@@ -38,6 +38,37 @@ class ApiController {
 
     return res.status(500);
   }
+
+  async login(req, res){
+    const response = await authService.login(req.body);
+
+    if (response.status >= 200 && response.status < 300) {
+      return res.status(200).json({
+        ...response.data
+      })
+    }
+  }
+
+  async verifiedToken(req, res){
+    const response = await authService.verifiedToken(req.body);
+
+    if (response.status >= 200 && response.status < 300) {
+      return res.status(200).json({
+        ...response.data
+      })
+    }
+  }
+
+  async addUser(req, res){
+    const response = await authService.addUser(req.body);
+
+    if (response.status >= 200 && response.status < 300) {
+      return res.status(200).json({
+        ...response.data
+      })
+    }
+  }
+
 }
 
 module.exports = ApiController;
