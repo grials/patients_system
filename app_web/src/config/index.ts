@@ -6,6 +6,9 @@ export default {
       addPatient: '/api/patients/add',
       getPatient: '/api/patients/patient',
       allPatients: '/api/patients/all',
+      login: '/api/auth/login',
+      verifiedToken: '/api/auth/token/verified',
+      addUser: '/api/auth/user/add',
     },
   },
 };

@@ -18,7 +18,9 @@ class UserDomain{
                         let token = await JWT.assignToken(username);
                         return {
                             username,
-                            token
+                            token,
+                            msg: "login exitoso",
+                            error: false
                         }
                 }else{
                     return {
@@ -63,7 +65,9 @@ class UserDomain{
         try {
             let data = await JWT.verifiedToken(token);
 
-            return {msg: "token valid", data, error: false};
+            return {msg: "token valid", dataUser: {
+                username : data.username, token
+            }, error: false};
         } catch (error) {
             // console.log("Error lin 68 "+__dirname+" "+error);
             return {msg: "token invalid", data: null, error: true};

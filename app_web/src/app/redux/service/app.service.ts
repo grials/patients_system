@@ -14,7 +14,7 @@ export class AppService {
   }
 
   static async get(url: string) {
-    let response = await axios.post(url);
+    let response = await axios.get(url);
     return response;
   }
 }

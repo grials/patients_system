@@ -42,8 +42,8 @@ function ValidPetition(data){
     }
 
     if (
-        !name.match(/^[a-záéíóú]+$/ig) ||
-        !lastname.match(/^[a-záéíóú]+$/ig) ||
+        !name.match(/^[a-záéíóú ]+$/ig) ||
+        !lastname.match(/^[a-záéíóú ]+$/ig) ||
         (parseInt(age) < 0 || parseInt(age) > 130) ||
         !moment(birthday, 'DD/MM/YYYY',true).isValid() ||
         !phone.match(/^[0-9]+$/ig)

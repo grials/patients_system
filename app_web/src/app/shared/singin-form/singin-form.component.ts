@@ -31,14 +31,14 @@ export class SinginFormComponent implements OnInit {
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern('^[a-zA-Z]+$'),
+          Validators.pattern('^[a-zA-Z ]+$'),
         ])
       ),
       lastname: new FormControl(
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern('^[a-zA-Z]+$'),
+          Validators.pattern('^[a-zA-Z ]+$'),
         ])
       ),
       age: new FormControl(

@@ -79,7 +79,7 @@ class Patients {
 
   async getAllPatients() {
     try {
-      const patients = await this.model.find();
+      const patients = await (await this.model.find()).reverse();
       return patients;
     } catch (error) {
       console.log('error en lin 85 ' + __dirname, error);

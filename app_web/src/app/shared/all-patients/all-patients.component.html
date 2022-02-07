@@ -1,0 +1,34 @@
+<div class="AllPatients">
+  <div class="cont_AllPatients">
+    <div class="cont2_AllPatients">
+      <div class="header">
+        <div class="cont_h">
+          <div class="cont2_h">
+            <div class="title">
+              <h1>Bienvenido</h1>
+            </div>
+            <div class="subTitle">
+              <h2>estos son todos los pacientes del Sitema</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contentAllPatients">
+        <div class="cont_cap">
+          <div class="cont2_cap">
+            <app-patient
+              *ngFor="let patient of getAllPatients()"
+              [age]="patient?.age"
+              [birthday]="patient?.birthday"
+              [gender]="patient?.gender"
+              [lastname]="patient?.lastname"
+              [name]="patient?.name"
+              [phone]="patient?.phone"
+              [pregnancy]="patient?.pregnancy"
+            ></app-patient>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

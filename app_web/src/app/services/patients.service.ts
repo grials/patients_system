@@ -10,4 +10,8 @@ export class PatientsService {
   addPatient(data: any) {
     return StoreApp.addPatient(data);
   }
+
+  allPatients() {
+    return StoreApp.allPatients();
+  }
 }

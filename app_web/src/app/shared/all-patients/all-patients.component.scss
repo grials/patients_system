@@ -1,0 +1,102 @@
+.AllPatients {
+  position: relative;
+  width: 100%;
+  height: auto;
+  * {
+    margin: 0;
+  }
+  & > .cont_AllPatients {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > .cont2_AllPatients {
+      max-width: 1200px;
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+
+      & > .header {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        & > .cont_h {
+          position: relative;
+          width: 100%;
+          height: auto;
+          padding: 16px 0;
+
+          & > .cont2_h {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+
+            & > .title {
+              position: relative;
+              width: 100%;
+              height: auto;
+              padding: 8px 0;
+
+              & > h1 {
+                font-size: 2rem;
+                color: #000;
+                text-align: center;
+              }
+            }
+
+            & > .subTitle {
+              position: relative;
+              width: 100%;
+              height: auto;
+              padding: 8px 0;
+
+              & > h2 {
+                font-size: 1.2rem;
+                color: #000;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      & > .contentAllPatients {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        & > .cont_cap {
+          position: relative;
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          & > .cont2_cap {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+  }
+}

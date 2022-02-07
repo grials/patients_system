@@ -1,1 +1,60 @@
-
+<div class="LoginForm">
+  <div class="cont_LoginForm">
+    <div class="cont2_LoginForm">
+      <div class="continerForm">
+        <div class="cont_cf">
+          <div class="cont2_cf">
+            <form class="form" [formGroup]="loginFormGroup">
+              <div class="title">
+                <h1>Iniciar Sección</h1>
+              </div>
+              <div class="continerInputs">
+                <div class="cont_ci">
+                  <div class="cont2_ci">
+                    <div class="continerInput">
+                      <mat-form-field class="input" appearance="fill">
+                        <mat-label>Usuario</mat-label>
+                        <input
+                          matInput
+                          placeholder="ADMIN"
+                          formControlName="username"
+                        />
+                      </mat-form-field>
+                    </div>
+                    <div class="continerInput">
+                      <mat-form-field class="input" appearance="fill">
+                        <mat-label>Contraseña</mat-label>
+                        <input
+                          matInput
+                          placeholder="ADMIN"
+                          formControlName="password"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="continerBtn">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  [disabled]="disabledSubmitButton"
+                  (click)="onSubmit()"
+                >
+                  Iniciar Seccion
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="errorServer" *ngIf="isErrorServe()">
+        <div class="cont_errorServer">
+          <div class="cont2_errorServer">
+            <h2>{{ msgServer() }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

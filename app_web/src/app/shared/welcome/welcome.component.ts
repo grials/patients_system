@@ -12,7 +12,6 @@ export class WelcomeComponent implements OnInit {
 
   constructor() {
     this.dataPatient = StoreApp.getDataPatient();
-    console.log(this.dataPatient);
   }
 
   ngOnInit(): void {}

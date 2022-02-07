@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AllPatientsComponent } from './all-patients/all-patients.component';
+import { PatientComponent } from './patient/patient.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     SinginFormComponent,
     LoginFormComponent,
     WelcomeComponent,
+    AllPatientsComponent,
+    PatientComponent,
   ],
   imports: [CommonModule, RouterModule, ReactiveFormsModule, MaterialModule],
   exports: [
@@ -27,6 +31,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     SinginFormComponent,
     LoginFormComponent,
     WelcomeComponent,
+    AllPatientsComponent,
   ],
 })
 export class SharedModule {}
