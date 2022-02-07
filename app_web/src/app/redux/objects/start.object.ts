@@ -1,3 +1,3 @@
 export const startObject = {
-  task: [],
+  dataPatient: {},
 };

@@ -1,10 +1,10 @@
 import { AppReducer } from '../reducers/app.reducer';
 
 export class AppAction {
-  static newTask(task: any) {
+  static addPatient(data: any) {
     return {
-      type: AppReducer.NEW_TASK,
-      object: task,
+      type: AppReducer.ADD_PATIENT,
+      object: data,
     };
   }
 }

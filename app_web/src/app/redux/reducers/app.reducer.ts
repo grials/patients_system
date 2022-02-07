@@ -2,17 +2,17 @@ import { dataUser } from '../objects/dataUser.object';
 import { startObject } from '../objects/start.object';
 
 export class AppReducer {
-  static NEW_TASK = 'NEW_TASK';
+  static ADD_PATIENT = 'ADD_PATIENT';
 
   static workspaceReducer(state = startObject, action: any) {
     switch (action.type) {
-      case AppReducer.NEW_TASK:
-        console.log('reducer >>>>', action.object);
+      case AppReducer.ADD_PATIENT:
         return {
-          ...startObject,
-          task: [...state.task, action.object],
+          ...state,
+          dataPatient: {
+            ...action.object,
+          },
         };
-
       default:
         return state;
     }

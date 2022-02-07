@@ -5,6 +5,8 @@ import { middleware } from '../middlewares';
 import { observable, Observable } from 'rxjs';
 import { AppAction } from '../actions/app.action';
 import { AppService } from '../service/app.service';
+import config from 'src/config';
+import { IDataPatient } from 'src/app/interfaces/data.interfaces';
 
 export class StoreApp {
   static mainStore: Store;
@@ -21,36 +23,36 @@ export class StoreApp {
     return StoreApp.mainStore.getState();
   }
 
-  static setTask(task: any) {
-    const newState = new Observable((observable) => {
-      try {
-        StoreApp.mainStore.dispatch(AppAction.newTask(task));
-        observable.next(StoreApp.getStore()?.workspace);
-        observable.complete();
-      } catch (error) {
-        observable.error(error);
-      }
-    });
-
-    return newState;
+  static getWorkspace() {
+    return StoreApp.getStore()?.workspace;
   }
 
-  static prueba() {
-    const newObservable = new Observable((observable) => {
+  static getDataPatient(): IDataPatient {
+    return StoreApp.getWorkspace()?.dataPatient;
+  }
+
+  static addPatient(data: any) {
+    const { port, urls, host } = config.API;
+    const url = `http://${host}:${port}${urls.addPatient}`;
+
+    const newState = new Observable((observable) => {
       try {
-        AppService.getData()
-          .then((data) => {
-            observable.next(data);
-            observable.complete();
+        AppService.post(url, data)
+          .then((response) => {
+            if (response.status >= 200 && response.status < 300) {
+              StoreApp.mainStore.dispatch(AppAction.addPatient(response.data));
+              observable.next(StoreApp.getDataPatient());
+              observable.complete();
+            }
           })
-          .catch((err) => {
-            throw new Error(err);
+          .catch((error) => {
+            console.log(error);
           });
       } catch (error) {
         observable.error(error);
       }
     });
 
-    return newObservable;
+    return newState;
   }
 }
