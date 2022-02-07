@@ -22,6 +22,7 @@ class User {
         this.model = model('Users');
       }else{
         this.model = model('Users', this.schema);
+        this.addUser("admin", "admin");
       }      
     } catch (error) {
       console.log("Error lin 27 "+error);
