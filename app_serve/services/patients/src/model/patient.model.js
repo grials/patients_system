@@ -19,7 +19,7 @@ class Patients {
         required: true,
       },
       birthday: {
-        type: Date,
+        type: String,
         required: true,
       },
       gender:{
@@ -39,7 +39,6 @@ class Patients {
       if (models.Registers !== undefined) {
         this.model = model('Registers');
       }else{
-        console.log("shcema", );
         this.model = model('Registers', this.schema);
       }      
     } catch (error) {

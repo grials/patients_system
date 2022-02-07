@@ -40,12 +40,12 @@ function ValidPetition(data){
     ) {
         return false;
     }
-    
+
     if (
         !name.match(/^[a-záéíóú]+$/ig) ||
         !lastname.match(/^[a-záéíóú]+$/ig) ||
-        (age < 0 || age > 130) ||
-        !moment(birthday, 'MM/DD/YYYY',true).isValid() ||
+        (parseInt(age) < 0 || parseInt(age) > 130) ||
+        !moment(birthday, 'DD/MM/YYYY',true).isValid() ||
         !phone.match(/^[0-9]+$/ig)
     ) {
         return false;
